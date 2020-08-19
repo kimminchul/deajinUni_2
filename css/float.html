@@ -28,18 +28,28 @@
       }
       .float_test {
         border:3px #00F solid;
+
       }
       .float_test span:nth-child(1){
-        float:right;
+        height:200px;
+        float:left;
       }
       .float_test span:nth-child(2){
         float:right;
+        height:300px;
       }
       .float_test span:nth-child(3){
         float:right;
       }
 
+      .float_parent{
+        border:2px #00f solid;
+      }
 
+      .clear{
+        border:1px #f00 solid;
+        clear:both;
+      }
     </style>
   </head>
   <body>
@@ -49,10 +59,15 @@
       <span>2</span>
       <span>3</span>
     </div>
+    <div class="clear">
+      test
+    </div>
+ssdf
 
 
+    <!-- <div class="float_parent">
 
-    <!--
+
     <h1>Element</h1>
     <div class="float_target">
 
@@ -75,7 +90,7 @@
 
       Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
     </p>
-    -->
+  </div> -->
 
 
 
