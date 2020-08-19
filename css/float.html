@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--
+      1. 공증에 띄다
+      2. 플룻이 선언된 엘리먼트는 컨텐츠가 피해간다.
+      3. 플룻이 선언된 엘리먼트는 먼저선언된 형제 엘리먼트위로는 공중에 뜰 수 없다..
+    -->
+    <style>
+      .float_target{
+        width:100px;
+        height:100px;
+        border:1px #F00 solid;
+        float:left;
+        margin-right:10px;
+      }
+      .contants{
+        border:1px #F00 solid;
+        background-color:#CCC;
+      }
+      .float_test span{
+        display:block;
+        border:1px #F00 solid;
+        width:100px;
+        height:100px;
+      }
+      .float_test {
+        border:3px #00F solid;
+      }
+      .float_test span:nth-child(1){
+        float:right;
+      }
+      .float_test span:nth-child(2){
+        float:right;
+      }
+      .float_test span:nth-child(3){
+        float:right;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="float_test">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+
+
+
+    <!--
+    <h1>Element</h1>
+    <div class="float_target">
+
+    </div>
+    <p class="contants">
+      The selector points to the HTML element you want to style.
+
+      The declaration block contains one or more declarations separated by semicolons.
+
+      Each declaration includes a CSS property name and a value, separated by a colon.
+
+      Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
+    </p>
+    <p class="contants">
+      The selector points to the HTML element you want to style.
+
+      The declaration block contains one or more declarations separated by semicolons.
+
+      Each declaration includes a CSS property name and a value, separated by a colon.
+
+      Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
+    </p>
+    -->
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
