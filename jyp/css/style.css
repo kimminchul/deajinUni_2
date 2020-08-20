@@ -50,6 +50,15 @@ a{
   height: 56px;
   border: 1px #F00 solid;
   line-height: 56px;
+  transition: 0.5s;
+  position: relative;
+  bottom:0px;
+}
+
+
+.gnb .navimenu>ul>li>a:hover{
+  color:skyblue;
+  bottom:10px;
 }
 
 .gnb .navimenu ul ul{
@@ -68,4 +77,16 @@ a{
 
 .gnb .navimenu>ul>li:hover ul{
   display: block;
+}
+.gnb .option li,
+.gnb .option ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+.gnb .option .sns li{
+  width: 30px;
+  height: 30px;
+  background-color: #CCC;
+  border: 1px #F00 solid;
+  border-radius: 10px;
 }
