@@ -78,15 +78,32 @@ a{
 .gnb .navimenu>ul>li:hover ul{
   display: block;
 }
+
 .gnb .option li,
 .gnb .option ul {
   display: inline-block;
   vertical-align: middle;
 }
+
 .gnb .option .sns li{
   width: 30px;
   height: 30px;
-  background-color: #CCC;
+  background-color: #666;
+  background-repeat: no-repeat;
+  background-position: center center;
   border: 1px #F00 solid;
   border-radius: 10px;
+}
+
+.gnb .option .sns .twitter{
+  background-image:url(../images/twitter_bird-w.png);
+}
+.gnb .option .sns .facebook{
+  background-image:url(../images/facebook-w.png);
+}
+.gnb .option .sns .youtube{
+  background-image:url(../images/youtube-w.png);
+}
+.gnb .option .sns .edm{
+  background-image:url(../images/edm-r.png);
 }
