@@ -91,10 +91,25 @@ a{
   background-color: #666;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px #F00 solid;
   border-radius: 10px;
 }
+.gnb .option .sns li a{
+  height:100%;
+  width: 100%;
+  display:block;
+}
+.gnb .option {
+  float:right;
+}
 
+.gnb .option ul{
+  line-height: 56px;
+}
+.gnb .option .leng{
+  margin-right:20px;
+  color:skyblue;
+  font-size:12px;
+}
 .gnb .option .sns .twitter{
   background-image:url(../images/twitter_bird-w.png);
 }
