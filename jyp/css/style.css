@@ -138,3 +138,25 @@ a{
   position: relative;
   top:30px;
 }
+
+.grid .grid-wrap{
+  outline:1px #F00 solid;
+  width: 980px;
+  min-height: 500px;
+  margin:0 auto;
+}
+.grid .grid-wrap  li{
+  text-align: center;
+  width: 290px;
+  margin:0 15px;
+  display: inline-block;
+}
+.grid .grid-wrap .photo{
+  width: 290px;
+  height: 230px;
+  outline: 1px #F00 solid;
+}
+.grid .grid-wrap .photo img{
+  width: 290px;
+  height: 230px;
+}
