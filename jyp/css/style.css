@@ -145,13 +145,26 @@ a{
   min-height: 500px;
   margin:0 auto;
 }
-.grid .grid-wrap  li{
+.grid .grid-wrap li{
   text-align: center;
   width: 290px;
   margin:0 15px;
   display: inline-block;
+  vertical-align: top;
+
 }
+
+.grid .grid-wrap li img{
+  transition: 0.5s cubic-bezier(1, 0.49, 0, 0.68);
+  transform: scale(1) rotate(0deg);
+}
+
+.grid .grid-wrap li img:hover{
+  transform: scale(1.7) rotate(5deg);
+}
+
 .grid .grid-wrap .photo{
+  overflow: hidden;
   width: 290px;
   height: 230px;
   outline: 1px #F00 solid;
