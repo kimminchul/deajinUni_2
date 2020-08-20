@@ -101,7 +101,6 @@ a{
 .gnb .option {
   float:right;
 }
-
 .gnb .option ul{
   line-height: 56px;
 }
@@ -121,4 +120,21 @@ a{
 }
 .gnb .option .sns .edm{
   background-image:url(../images/edm-r.png);
+}
+
+.titler {
+  height:170px;
+  background-color: #EEE;
+}
+
+.titler .titlewap{
+  width: 980px;
+  height:100%;
+  margin:0 auto;
+  outline:1px #F00 solid;
+}
+
+.titler .titlewap img{
+  position: relative;
+  top:30px;
 }
