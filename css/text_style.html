@@ -6,21 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-    .list{
-      color:red
+
+    .red{
+      color:red;
+      font-size:20px;
+      border:1px #F00 solid;
     }
-    .test{
-      color:blue;
+    .colorf{
+      color:inherit;
+      font-size:initial;
     }
+
   </style>
 </head>
 <body>
+
+<p>
+  ss는 다양한 위치에서 기술될수 있는데, 그 위치에 따라서 우선순위가 달라진다. css가 기술될 수 있는 위치는 아래와 같고, 우선순위는 아래로 내려갈수록 높다. (저작자 CSS의 !important가 제일 높음)
+
+브라우저의 CSS
+사용자 CSS 일반선언
+저작자 CSS 일반선언
+저작자 CSS의 !important
+ss는 다양한 위치에서 기술될수 있는데, 그 위치에 따라서 우선순위가 달라진다. css가 기술될 수 있는 위치는 아래와 같고, 우선순위는 아래로 내려갈수록 높다. (저작자 CSS의 !important가 제일 높음)
+
+브라우저의 CSS
+사용자 CSS 일반선언
+저작자 CSS 일반선언
+저작자 CSS의 !important
+ss는 다양한 위치에서 기술될수 있는데, 그 위치에 따라서 우선순위가 달라진다. css가 기술될 수 있는 위치는 아래와 같고, 우선순위는 아래로 내려갈수록 높다. (저작자 CSS의 !important가 제일 높음)
+
+브라우저의 CSS
+사용자 CSS 일반선언
+저작자 CSS 일반선언
+저작자 CSS의 !important
+</p>
+
+
+
       <div class="list">
         <ul>
-          <li>text01</a>
+          <li class="red">
+            text01
             <ul>
-              <li class="test">text01</a>
-                <ul>
+              <li class="test">
+                text01
+                <ul class="colorf">
                   <li>text01</li>
                   <li>text02</li>
                   <li>text03</li>
