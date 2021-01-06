@@ -1,0 +1,22 @@
+<script>
+
+// 1. 점수별로 학점이 출력되게 하시오.
+// 2. 학점이 출력될 때. 이름을 출력되게 하시오.
+// ex : {아무게} 님은 {n} 학점입니다.
+
+var name = prompt("당신의 이름을 넣어주세요")
+var ans = prompt("당신의 점수를 입력해보세요.")
+
+ans = Number(ans);
+
+if(ans >= 0 && ans <= 19){
+    document.write("F")
+}else if(ans >= 20 && ans <= 39){
+    document.write("D")
+}else if(ans >= 40 && ans <= 59){
+    document.write("C")
+}else{
+    document.write("조건에 맞지 않습니다.")
+}
+
+</script>
