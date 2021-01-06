@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="optimizeCard()">카드 생성</button>
+
+    <script>
+
+// 1. 각각의 클로버, 스페이스, 다이아몬드, 하트를 생성한다.
+// 2. 생성된 카드는 A 2~10 J Q K 총 13장이 생성된다
+// 3. 한배열에 담느다. 
+
+
+function optimizeCard(){
+
+    var card_shape = ["스","다","하","클"];
+    var card_deck = [];
+
+    for(i=0; i < card_shape.length; i++){
+        
+        for(j=0; j < 13; j ++){
+
+            var transNumber = j+1;
+            var strCode = "";
+
+            if(transNumber == 1){
+                strCode = "A"
+            }else if(transNumber == 11){
+                strCode = "J"
+            }else if(transNumber == 12){
+                strCode = "Q"
+            }else if(transNumber == 13){
+                strCode = "K"
+            }else{
+                strCode = transNumber
+            }
+            card_deck.push( card_shape[i] + strCode)
+        }
+
+    }
+    
+    console.log(card_deck)
+}
+</script>
+</body>
+</html>
