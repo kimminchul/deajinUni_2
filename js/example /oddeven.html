@@ -1,0 +1,32 @@
+<script>
+
+// 1. 아무숫자를 정한다
+// 2. 정답을 요구한다.      
+
+var ran = Math.random() * 100;
+var an_number = Math.floor(ran);
+
+var x = an_number % 2
+
+var an_user = prompt("맞춰봐");
+var an_text = ""
+
+if(x == 1){
+    an_text = "홀"
+}else if(x==0){
+    an_text = "짝"
+}
+
+if(an_user == an_text){
+    document.write("정답 입니다. <br /> 입력값 : " + an_user +" 실제값은 :" + an_text)
+}else if(an_user != an_text){
+    document.write("오답 입니다. <br /> 입력값 : " + an_user +" 실제값은 :" + an_text)
+}
+
+
+
+
+
+
+
+</script>
