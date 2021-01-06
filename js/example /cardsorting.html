@@ -7,6 +7,7 @@
 </head>
 <body>
 <button onclick="optimizeCard()">카드 생성</button>
+<button onclick="cardPush()">카드 나눠 주기</button>
 
     <script>
 
@@ -15,10 +16,24 @@
 // 3. 한배열에 담느다. 
 
 
+
+var user = [];
+var card_deck = [];
+
+function cardPush(){
+
+    var ranNum = Math.floor(Math.random() * card_deck.length);
+    user.push(card_deck[ranNum])
+    card_deck.splice(ranNum,1)
+    console.log(user)
+
+}
+
+
 function optimizeCard(){
 
     var card_shape = ["스","다","하","클"];
-    var card_deck = [];
+    card_deck = [];
 
     for(i=0; i < card_shape.length; i++){
         
