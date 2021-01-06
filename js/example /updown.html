@@ -1,0 +1,33 @@
+<script>
+
+// 1~50 딜러가 숫자를 생각한다. 
+// 게임 참가자는 5번 게임에 참여할 수 있다 
+// 1회 참혀씨 숫자를 말할 수 있다.
+// 오답을 이야기할 경우 딜러는 업 또는 다운이라고 정답에 대한 힌트를 제공한다.
+// 참여자가 정답을 맞추면 게임은 끝이 난다.
+// 참여자가 5회 동안 정답을 맞추지 못하더라도 게임은 끝이난다.
+
+var ranNum = Math.floor(Math.random() * 200);
+var count_limit = 8;
+
+for(var i = 0; i < count_limit; i++){
+
+    var user_answer = prompt("숫자를 작성하시요");
+    
+    if(ranNum == user_answer){
+        console.log("정답입니다.");
+    }else if(ranNum > user_answer){
+        console.log("업")
+    }else if(ranNum < user_answer){
+        console.log("다운")
+    }else{
+        console.log("넌 헛소리를해서 기회 한번을 날렷어.")
+    }
+
+}
+
+ console.log("정답은 ." + ranNum);
+
+
+
+</script>
