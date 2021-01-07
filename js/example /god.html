@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="start()">시작!</button>
+
+    <script>
+
+        //1. 시작 버튼/ 누르면/ 사용자의 이름을 물어보면
+        //2. 출력될 문장 데이터를 생성한다.
+        //3. 랜덤으로 materiald의 단어와 action의 단어를 조합한다.
+        
+        var material = ["외모를","돈을","건강을","학점을","팀플을","유머를","매력을","못생김을","순수를","똘끼를","인성을","운을","기억력을","일복을","노안을","동안을","머리숱을","귀여움을 ","사랑","먹을복","체력","귀찮음", "허세를", "지혜로움을", "진지함을", "뱃살을"]
+        var action = ["한스푼 넣고","조금 넣고","두수푼 넣고","쏟아버렸네","쏟았다","한방울 넣었다","깜박 했다","안 넣을래","기억이 없는데 이미 넣었네"]
+
+        function randomText(src){
+            var n = Math.floor(Math.random() * src.length);
+            var t = src[n]; 
+            src.splice(n,1);            
+            return t
+        }
+
+        function start() {
+            var user = prompt("이름을 입력하세요");
+            var count = prompt("얼만큼 공을 드려서 만들면 좋겠습니까? (숫자로)")
+            
+            document.write("어디한번"+" " + user +" "+ "이를 만들어볼까~ <br />" )
+            
+            var i = 0;
+            
+            while (i < Number(count)) {
+                document.write(randomText(material) +" "+ randomText(action) + "<br />")    
+                i++
+            }
+        }
+        
+
+    </script>
+</body>
+</html>
