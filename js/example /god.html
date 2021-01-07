@@ -18,23 +18,38 @@
         var material = ["외모를","돈을","건강을","학점을","팀플을","유머를","매력을","못생김을","순수를","똘끼를","인성을","운을","기억력을","일복을","노안을","동안을","머리숱을","귀여움을 ","사랑","먹을복","체력","귀찮음", "허세를", "지혜로움을", "진지함을", "뱃살을"]
         var action = ["한스푼 넣고","조금 넣고","두수푼 넣고","쏟아버렸네","쏟았다","한방울 넣었다","깜박 했다","안 넣을래","기억이 없는데 이미 넣었네"]
 
-        function randomText(src){
+        function randomText(src,x){
             var n = Math.floor(Math.random() * src.length);
             var t = src[n]; 
-            src.splice(n,1);            
+            
+            if(x == "limite"){
+                src.splice(n,1);            
+            }
             return t
         }
+        
+        
+        var user = "";
+        var count = 0;
 
         function start() {
-            var user = prompt("이름을 입력하세요");
-            var count = prompt("얼만큼 공을 드려서 만들면 좋겠습니까? (숫자로)")
-            
+            user = prompt("이름을 입력하세요");
+            count = prompt("얼만큼 공을 드려서 만들면 좋겠습니까? (숫자로)")
+              
+            if(count > material.length){
+                alert("욕심이 많네... "+material.length+" 이내로 작성해")
+            }else if(count <= material.length){
+                result()
+            }
+        }
+
+        function result(){
             document.write("어디한번"+" " + user +" "+ "이를 만들어볼까~ <br />" )
             
             var i = 0;
             
             while (i < Number(count)) {
-                document.write(randomText(material) +" "+ randomText(action) + "<br />")    
+                document.write(randomText(material,"limite") +" "+ randomText(action) + "<br />")    
                 i++
             }
         }
