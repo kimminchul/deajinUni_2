@@ -18,7 +18,7 @@
 
 
 var user = [];
-var card_deck = [];
+var card_deck = optimizeCard("다","클","스","하");
 
 function cardPush(){
 
@@ -30,10 +30,10 @@ function cardPush(){
 }
 
 
-function optimizeCard(){
+function optimizeCard(a,b,c,d){
 
-    var card_shape = ["스","다","하","클"];
-    card_deck = [];
+    var card_shape = [a,b,c,d];
+    var a = []
 
     for(i=0; i < card_shape.length; i++){
         
@@ -53,9 +53,9 @@ function optimizeCard(){
             }else{
                 strCode = transNumber
             }
-            card_deck.push( card_shape[i] + strCode)
+            a.push( card_shape[i] + strCode)
         }
-
+        return a
     }
     
     console.log(card_deck)
