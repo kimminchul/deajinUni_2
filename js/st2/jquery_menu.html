@@ -5,41 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../jquery/jquery.3.5.1.js"></script>
     <title>Document</title>
+    <style>
+
+        ul{
+            list-style: none; 
+            padding:0; 
+            margin:0;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+
+        .menu{
+            border:1px #F00 solid;
+            width: 300px;
+        }
+        .menu>ul{
+            padding:20px;
+        }
+        .menu ul ul{
+            display: none;
+            background: #ccc;
+        }
+        
+        .menu a{
+            display: block;
+            height:40px;
+            line-height:40px;
+            border-bottom:1px #EEE solid;
+            box-sizing: border-box;
+        }
+
+        .menu li li a{
+            padding-left:20px;
+        }
+
+    </style>
 </head>
 <body>
-<ul>
-    <li>내소식
-        <ul>
-            <li>질문답변</li>
-            <li>댓글알람</li>
-            <li>내가 작성한 글</li>
-        </ul>
-    </li>
-    <li>회원정보
-        <ul>
-            <li>프로필 사진</li>
-            <li>회원정보</li>
-            <li>내정보 수정하기</li>
-            <li>탈퇴</li>
-        </ul>
-    </li>
-    <li>보조기기 수요현황
-        <ul>
-            <li>보조기기 신청목록확인</li>
-            <li>보조기기 작성한 사례</li>
-            <li>사례 피드백</li>
-            <li>사례 개발연계</li>
-            <li>보조기기 출력요청</li>
-            <li>신청 현황</li>
-        </ul>    
-    </li>
-    <li>교육신청
-        <ul>
-            <li>예약현황</li>
-            <li>컨설팅 신청</li>
-        </ul>
-    </li>
-</ul>    
+
+<div class="menu">
+    <ul>
+        <li><a href="">내소식</a>
+            <ul>
+                <li><a href ="">질문답변</a></li>
+                <li><a href ="">댓글알람</a></li>
+                <li><a href ="">내가 작성한 글</a></li>
+            </ul>
+        </li>
+        <li><a href="">회원정보</a>
+            <ul>
+                <li><a href="">프로필 사진</a></li>
+                <li><a href="">회원정보</a></li>
+                <li><a href="">내정보 수정하기</a></li>
+                <li><a href="">탈퇴</a></li>
+            </ul>
+        </li>
+        <li><a href="">보조기기 수요현황</a>
+            <ul>
+                <li><a href="">보조기기 신청목록확인</a></li>
+                <li><a href="">보조기기 작성한 사례</a></li>
+                <li><a href="">사례 피드백</a></li>
+                <li><a href="">사례 개발연계</a></li>
+                <li><a href="">보조기기 출력요청</a></li>
+                <li><a href="">신청 현황</a></li>
+            </ul>    
+        </li>
+        <li><a href="">교육신청</a>
+            <ul>
+                <li><a href="">예약현황</a></li>
+                <li><a href="">컨설팅 신청</a></li>
+            </ul>
+        </li>
+    </ul>    
+</div>
 
 </body>
 </html>
