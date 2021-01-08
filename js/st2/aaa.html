@@ -5,31 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../jquery/jquery.3.5.1.js"></script>
     <script>
-
         $(document).ready(function(){
             $(".menu > ul > li").click(function(){
-                $(this) .children('ul') .fadeToggle(1000) .parent() .siblings() .children('ul') .fadeOut(1000); 
+                $(this).children('ul').slideToggle().parent().siblings().children('ul').slideUp();
                 return false;
             })
-            
-            // display:none
-            // 선택자.slideDown() 
-            // display:block
-            // 선택자.slideUp()
-
-            // 선택자.slideToggle()
-
-            // show()
-            // hide()
-            // toggle()
-
-            //  fadeIn()
-            // fadeOut()
-            // fadeToggle()
         })
-
     </script>
+    
     <title>Document</title>
+    
     <style>
 
         ul{
@@ -60,15 +45,10 @@
             line-height:40px;
             border-bottom:1px #EEE solid;
             box-sizing: border-box;
-            font-weight: bold;
-        }
-        
-        .menu li li a{
-            padding-left:20px;
         }
 
-        .menu>ul>li>a:hover{
-            background-color: #F00;
+        .menu li li a{
+            padding-left:20px;
         }
 
     </style>
@@ -76,7 +56,7 @@
 <body>
 
 <div class="menu">
-    <ul> 
+    <ul>
         <li><a href="">내소식</a>
             <ul>
                 <li><a href ="">질문답변</a></li>
