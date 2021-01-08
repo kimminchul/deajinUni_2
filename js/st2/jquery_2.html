@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 1 -->
     <script src="../jquery/jquery.3.5.1.js"></script>
-    
-    <!-- 2 CDN -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    
-    <script>
-        
-        $(document).ready(function(){
-
-
-        })
-    </script>
     <title>Document</title>
 
+    <script>
+        // var el = document.querySelector('.el')
+
+        // el.write("hello world")
+
+        $(document).ready(function(){
+
+            $('.el')
+            .text("hello world!")
+            .css("color","red");
+
+        })
+
+    </script>
 
 </head>
 <body>
-   
+    <div class="el"></div>
 </body>
 </html>
