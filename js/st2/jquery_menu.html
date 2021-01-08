@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../jquery/jquery.3.5.1.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $(".menu > ul > li").click(function(){
+                $(this).children('ul').slideToggle().parent().siblings().children('ul').slideUp();
+                return false;
+            })
+        })
+
+    </script>
     <title>Document</title>
     <style>
 
