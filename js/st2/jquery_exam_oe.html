@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery/jquery.3.5.1.js"></script>
+    <title>Document</title>
+    <style>
+        .answer-box {display: none;}
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            
+
+            var ran = 0;
+            var an_number = 0;
+
+            //시작할때
+            var start = function(){
+
+                $('.ment').text("자 기다려봐 '짤짤짤짤짤.. 짤짤'") // 1 class .ment의  텍스트를 변경해
+                $('.start-btn').css('display','none') // 2 start-btn 을 사라지게해
+                
+                ran = Math.random() * 100; //0 99까지의 랜덤수를 만들어 ? 어??? 난수!!
+                an_number = Math.floor(ran); //그 랜덤으로 발생한 난수를 정수를 바꿔
+                
+                var que = function(){
+                    $('.ment').text("자! 홀짝 맞춰봐!") // ment 의 텍스트를 바꿔
+                    $('.answer-box').css('display','block') // .answer-box를 보여줘
+                    $('.answer').val("어이 val 도없는 놈 맞춰봐.")
+                    console.log( "생성된 답:"+an_number)
+                } 
+                
+                setTimeout(que,3000) // 3초있디가  que 실행해
+            }
+
+            //제출기능
+            var com = function(){
+                var x = an_number % 2
+                var an_user = $('.answer').val();
+                
+                var an_text = ""
+
+                if(x == 1){
+                    an_text = "홀"
+                }else if(x==0){
+                    an_text = "짝"
+                }
+
+                if(an_user == an_text){
+                    $('.result').text("정답이야 " + an_text)
+                }else if(an_user != an_text){
+                    $('.result').text("오답이야 " + an_text)
+                }
+            }
+
+            //시작 버튼을 클릭하면 start 를 실행한다.
+            $('.start-btn').click(start)
+            // 제출 기능
+            $('.confirm').click(com)
+
+        });
+
+
+
+
+
+        
+
+// var x = an_number % 2 
+
+// var an_user = prompt("맞춰봐");
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <h1 class="ment">지금부터 홀짝 게임을 시작하지 음하하하.</h1>
+    <button class="start-btn">홀짝 시작</button>
+    <div class="answer-box">
+        <input type="text" class="answer" name="" id="" />
+        <button class="confirm">제출</button>
+    </div>
+    <div class="result"></div>
+
+</body>
+</html>
