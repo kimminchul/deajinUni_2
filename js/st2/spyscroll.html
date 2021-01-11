@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery/jquery.3.5.1.js"></script>
+    <title>Document</title>
+    <style>
+        .menu{
+            position: fixed;
+            top:0;
+            right:0;
+        }
+        html,body{
+            height:100%
+        }
+        body{
+            margin:0;
+        }
+
+        .screen {
+            height:100%;
+        }
+        .screen>div.on{
+            color: red;
+        }
+        .screen>div{
+            height:100%;
+            border:1px #F00 solid;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            
+            //버튼기능
+            $('.menu button').click(function(){
+                var idx = $(this).index();
+
+                $('html,body').animate({
+                    "scrollTop":$(".screen>div").eq(idx).offset().top
+                });  
+            });
+
+            //스크롤 이동 기능
+            $(window).scroll(function(){
+                var sct = $(window).scrollTop()
+                
+                $(".screen>div").each(function(i,e){
+
+                    var elt = $(e).offset().top
+
+                    if(sct >=  elt && sct < elt + $(e).height()){
+                        $(e).addClass('on').siblings().removeClass('on')
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <button>hello1</button>
+        <button>hello2</button>
+        <button>hello3</button>
+        <button>hello4</button>
+        <button>hello5</button>
+    </div>
+    <div class="screen">
+        <div><h1>hello world1</h1></div>
+        <div><h1>hello world2</h1></div>
+        <div><h1>hello world3</h1></div>
+        <div><h1>hello world4</h1></div>
+        <div><h1>hello world5</h1></div>
+    </div>
+</body>
+</html>
