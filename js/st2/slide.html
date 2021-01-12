@@ -3,9 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../jquery/jquery.3.5.1.js">
-    
-    </script>
+    <script src="../jquery/jquery.3.5.1.js"></script>
+    <style>
+
+        body,html{
+            height:100%;
+            margin:0;
+        }
+
+        ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+
+        .slide{
+            width: 500px;
+            height: 400px;
+            border:1px #F00 solid;
+            
+            position: relative;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+        }
+
+        .slide li:nth-child(1) div{background-color: red;}
+        .slide li:nth-child(2) div{background-color: blue;}
+        .slide li:nth-child(3) div{background-color: yellow;}
+        .slide li:nth-child(4) div{background-color: green;}
+        .slide li:nth-child(5) div{background-color: pink;}
+
+        .slide li div{
+            border:1px #F00 solid;
+            width: 500px;
+            height: 400px;
+            display: none;
+            position: absolute;
+            top:0;
+            left:0;
+            box-sizing: border-box;
+        }
+        .slide li:first-child div{
+            display: block;
+        }
+
+        .slide li{
+            display: inline-block;
+        }
+        .slide li a{
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            top:300px;
+        }
+
+        .slide .screen{
+            text-align:center;
+            width: 500px;
+            height: 400px;
+            position: relative;
+            border:1px #F00 solid;
+        }
+
+        
+
+    </style>
+
     <title>Document</title>
 </head>
 <body>
@@ -16,19 +83,19 @@
             <ul>
                 <li>
                     <a href="">1</a>
-                    <div></div>
+                    <div>Hello world1</div>
                 </li>
                 <li>
-                    <a href="">1</a>
-                    <div></div>
+                    <a href="">2</a>
+                    <div>Hello world2</div>
                 </li>
                 <li>
-                    <a href="">1</a>
-                    <div></div>
+                    <a href="">3</a>
+                    <div>Hello world3</div>
                 </li>
                 <li>
-                    <a href="">1</a>
-                    <div></div>
+                    <a href="">4</a>
+                    <div>Hello world4</div>
                 </li>
             </ul>
         </div>
