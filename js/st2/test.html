@@ -31,32 +31,29 @@
     </style>
 
     <script>
-        $(document).ready(function(){
-            
-            //버튼기능
-            $('.menu button').click(function(){  //메뉴에 버튼을 클릭
-                
-                var idx = $(this).index(); // 클릭된 버튼의 인덱스 추출 하기
+        
+        .eq()
+        .index()
+        .click()
+        .siblings()
+        .each()
+        .scrollTop()
+        .animate()
+        .offset().top
+        .scroll()
 
-                $('html,body').animate({ // 화면 스크롤 이동 에니메이션
-                    "scrollTop":$(".screen>div").eq(idx).offset().top //화면의 n 번째의 위치로 이동
-                });  
-            });
+        //버튼기능
+        //메뉴에 버튼을 클릭
+        // 클릭된 버튼의 인덱스 추출 하기
+        // 화면 스크롤 이동 에니메이션
+        //화면의 n 번째의 위치로 이동
+                
+            
 
             //스크롤 이동 기능
-            $(window).scroll(function(){
-                var sct = $(window).scrollTop()
-                
-                $(".screen>div").each(function(i,e){
-
-                    var elt = $(e).offset().top
-
-                    if(sct >=  elt && sct < elt + $(e).height()){
-                        $(e).addClass('on').siblings().removeClass('on')
-                    }
-                });
-            })
-        })
+            
+            
+            
     </script>
 </head>
 <body>
