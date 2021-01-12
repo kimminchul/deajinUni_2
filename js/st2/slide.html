@@ -79,12 +79,12 @@
         $('.next-btn').click(function(){ //버튼을 클릭하면 실행
                 //스크린의 엘아이 중에 idx번째 의 자식 div 에게 에니메이션줘 
             $('.screen li').eq(idx++).children('div').stop().animate({
-                   'left':'-500px' //왼쪽으로 500 픽셀 이동하고
-                }).parent().next().children('div').css({ //현재로부터 부모의 다음 자식 디아이브에게 스타일줘
-                    'left':'500px', //오른쪽에 준비시키ㅣ고 
-                    'display':'block' // 눈에 보이게 해줘
-                }).animate({ // 움직워 
-                    'left':'0' // 화면안으로
+                   'left':'-500px' 
+                }).parent().next().children('div').css({
+                    'left':'500px',
+                    'display':'block' 
+                }).animate({ 
+                    'left':'0'
             })
 
             //만약에 idx가 스크린 엘아이보다 같거나 많아지면
@@ -97,6 +97,31 @@
                 })
             }
         })
+
+        $('.prev-btn').click(function(){
+            $('.screen li').eq(idx--).children('div').stop().animate({
+                   'left':'500px' 
+                }).parent().prev().children('div').css({
+                    'left':'-500px',
+                    'display':'block' 
+                }).animate({ 
+                    'left':'0'
+            })
+
+            //만약에 idx가 스크린 엘아이보다 같거나 많아지면
+            if(idx < 0){ 
+                idx = $('.screen li').length-1 // idx를 0으로 하고 
+                $('.screen li').eq(idx).children('div').css({
+                    "left":"-500px",
+                    "display":"block"
+                }).stop().animate({
+                    "left":0
+                })
+            }
+        })
+
+
+
     })
     </script>
 
