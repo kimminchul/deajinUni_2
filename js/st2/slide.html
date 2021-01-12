@@ -142,7 +142,16 @@
 
             }else if(idx < hisidx){
 
-                console.log("prev")
+                 $('.screen li').eq(hisidx).children('div').animate({
+                    "left":"500px"
+                })
+
+                $('.screen li').eq(idx).children('div').css({
+                    "left":"-500px",
+                    "display":"block"
+                }).animate({
+                    "left":0
+                })
             }
 
             return false
