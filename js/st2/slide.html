@@ -62,7 +62,7 @@
         }
 
         .slide .screen{
-            overflow: hidden;
+            
             text-align:center;
             width: 500px;
             height: 400px;
@@ -118,6 +118,34 @@
                     "left":0
                 })
             }
+        })
+
+        $('.screen li a').click(function(){
+                  
+            var hisidx = idx 
+            
+            idx = $(this).parent().index()
+            
+            
+            if(idx > hisidx){
+               
+                $('.screen li').eq(hisidx).children('div').animate({
+                    "left":"-500px"
+                })
+
+                $('.screen li').eq(idx).children('div').css({
+                    "left":"500px",
+                    "display":"block"
+                }).animate({
+                    "left":0
+                })
+
+            }else if(idx < hisidx){
+
+                console.log("prev")
+            }
+
+            return false
         })
 
 
