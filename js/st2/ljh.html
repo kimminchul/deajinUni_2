@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    
+    <title>Document</title>
+
+    <style>
+        body,html{
+            height: 100%;
+            margin:0;
+        }
+        .slide{
+            position: relative;
+            top: 20% ;
+            left: 20% ;
+            text-align: center;
+            width: 500px;
+            height: 500px;
+            border:red 1px solid;
+        }
+        .btn{
+            position:relative;
+        }
+        .btn button{
+            position: relative;
+            left:200px;
+            top:10px;
+        }
+        .screen{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            box-sizing: border-box;
+            box-sizing: translate(-50%, -50%);
+            border:blue 1px solid;
+            overflow: hidden;
+
+        }
+        .screen ul{
+            list-style: none;
+
+        }
+        .screen ul li{
+            display: inline-block;
+        }
+        .screen ul li a{
+            text-decoration: none;
+            z-index: 1;
+            position: relative;
+            top: 400px;
+            right: 25px;
+            font-size: 20px;
+            cursor : pointer;
+
+        }
+        .screen ul li:first-child div{
+            display: block;
+        }
+        .screen ul li div{
+            display:  none;
+            position: absolute;
+            z-index: 0;
+            left:0;
+            top:0;
+            width: 500px;
+            height: 500px;
+
+        }
+        .slide li:nth-child(1) div {background-color: red;}
+        .slide li:nth-child(2) div {background-color: blue;}
+        .slide li:nth-child(3) div {background-color: yellow;}
+        .slide li:nth-child(4) div {background-color: purple;}
+        .slide li:nth-child(5) div {background-color: skyblue;}
+        .slide li:nth-child(6) div {background-color: green;}
+
+        .slide li:first-child div{
+            display:block;
+        }
+
+    </style>
+
+    <script>
+
+        /* ((지문))
+        1. 6개의 아이템을 가지고 있는 슬라이드를 마크업한다.
+        2. 6개의 아이템에는 각각의 버튼과 div 화면이 있다.
+        3. 슬라이드 배너를 컨트롤할 수 있는 버튼 next와 prev를 만든다.
+        4. 어제 디자인을 한 형식으로 스타일 시트를 구성한다.
+
+        ((버튼))
+        1. next 버튼에 클릭 이벤트를 걸어 각각의 아이템의 슬라이드로 이동할 수 있게 한다.
+        2. next 버튼을 클릭하면 현재 보이는 아이템 div는 왼쪽으로 이동하며
+           다음 이미지는 오른쪽에 준비되어 화면에 보일 수 있는 위치에 온다.
+        3. next 버튼 클릭 시 아이템 갯수 이상 클릭할 경우 처음 이미지가 나오도록 한다.
+
+        - prev 버튼일 경우 동일하지만 반대애니메이션 진행한다.
+
+        1. 6개 각각의 아이템의 버튼을 클릭했을 때 버튼 인덱스에 맞는 div 화면이 슬라이딩 되어 나오도록 한다.
+        2. 슬라이드가 나오는 방법은 현재 클릭한 번호가 이전 번호보다 클 경우 next 버튼을 누른 슬라이딩 효과
+        3. 그 반대인 경우 prev 버튼을 누른 효과가 나오도록 한다.
+
+        ((보너스 추가))
+        현재 보이고 있는 div에 맞는 버튼 번호의 색상이 체크 되도록 한다.
+        이때 현재 체크된 번호만 활성화 되어 있고, 나머지는 비활성화 상태로 만든다.
+
+        */
+
+     $(document).ready(function(){
+        var idx = 0;
+        $('.next-btn').click(function(){
+           $('.slide li').eq(++idx).children('div').animate({
+               "left":"-500px"
+           }).parents().next().children('div').css({
+               "left" : "500px",
+               "display":"block"
+           }).stop().animate({
+               "left":"0"
+           })
+        
+           if( idx >= $('.slide li').length) {
+               idx = 0;
+               $('.slide li').eq(idx+1).children('div').css({
+               "left" : "500px"
+              }).stop().animate({
+               "left":"0"
+              })
+           }  
+           console.log(idx)
+        })
+
+        $('.prev-btn').click(function(){
+           $('.slide li').eq(idx--).children('div').animate({
+               "left":"500px"
+           }).parents().prev().children('div').css({
+               "left" : "-500px",
+               "display":"block"
+           }).stop().animate({
+               "left":"0"
+           })
+           
+           if( idx < 0) {
+               idx = $('.slide li').length-1
+               $('.slide li').eq(idx).children('div').css({
+               "left" : "-500px",
+               "display":"block"
+              }).stop().animate({
+               "left":"0"
+              })
+           }
+        })
+
+        // a 누르면 해당 페이지로 가기
+
+        $('.screen ul li a').click(function(){
+            
+            var his = idx
+            
+            idx = $(this).parent().index()
+            
+            console.log(idx,his)
+
+            if( idx > his) {
+               $('.slide li').eq(his).children('div').animate({
+               "left" : "-500px"
+              })
+              $('.slide li').eq(idx).css({
+                "left":"500px",
+                "display":"block"
+              }).animate({
+                  "left":0
+              })
+
+           }
+
+            // else if가 되지 않고 있습니다 ㅠㅠㅠㅠ
+
+            return false;
+        })
+
+
+        // // a 비활성화 시도
+        //     $(function(){
+        //     var able = $('.screen ul li div').index(this)
+        //     $(able).parents().children('a') //.css("pointer-events", "none").css("cursor", "default")
+        
+        // })
+
+
+
+
+
+
+
+
+
+
+
+     })
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+ <div class="slide">
+    <div class="screen">
+        <ul>
+            <li>
+                <a href="">1</a>
+                <div>Hello dear 1</div>
+            </li>
+            <li>
+                <a href="">2</a>
+                <div>Hello dear 2</div>
+            </li>
+            <li>
+                <a href="">3</a>
+                <div>Hello dear 3</div>
+            </li>
+            <li>
+                <a href="">4</a>
+                <div>Hello dear 4</div>
+            </li>
+            <li>
+                <a href="">5</a>
+                <div>Hello dear 5</div>
+            </li>
+            <li>
+                <a href="">6</a>
+                <div>Hello dear 6</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="btn">
+    <button class="prev-btn">이전</button>
+    <button class="next-btn">다음</button>
+</div>
+
+
+
+
+
+
+</body>
+</html>
