@@ -52,6 +52,9 @@
         .slide li{
             display: inline-block;
         }
+        .slide li.on a{
+            border:1px #FFF solid;
+        }
         .slide li a{
             position: relative;
             display: block;
@@ -78,9 +81,9 @@
 
         $('.next-btn').click(function(){ //버튼을 클릭하면 실행
                 //스크린의 엘아이 중에 idx번째 의 자식 div 에게 에니메이션줘 
-            $('.screen li').eq(idx++).children('div').stop().animate({
+            $('.screen li').eq(idx++).removeClass('on').children('div').stop().animate({
                    'left':'-500px' 
-                }).parent().next().children('div').css({
+                }).parent().next().addClass('on').children('div').css({
                     'left':'500px',
                     'display':'block' 
                 }).animate({ 
@@ -96,6 +99,9 @@
                     "left":0
                 })
             }
+            
+            
+
         })
 
         $('.prev-btn').click(function(){
@@ -170,7 +176,7 @@
 
         <div class="screen">
             <ul>
-                <li>
+                <li class="on">
                     <a href="">1</a>
                     <div>Hello world1</div>
                 </li>
